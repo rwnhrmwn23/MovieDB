@@ -19,6 +19,7 @@ class MovieApi(private val client: HttpClient) {
     suspend fun getMoviesByGenre(genreIds: String, page: Int): MovieResponseDto {
         return client.get("discover/movie") {
             parameter("with_genres", genreIds)
+            parameter("sort_by", "popularity.desc")
             parameter("page", page)
         }.body()
     }

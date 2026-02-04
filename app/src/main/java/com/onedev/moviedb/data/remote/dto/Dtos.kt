@@ -64,7 +64,10 @@ data class ReviewDto(
 
 @Serializable
 data class AuthorDetailsDto(
-    @SerialName("avatar_path") val avatarPath: String?
+    @SerialName("name") val name: String? = null,
+    @SerialName("username") val username: String? = null,
+    @SerialName("avatar_path") val avatarPath: String? = null,
+    @SerialName("rating") val rating: Double? = null
 )
 
 @Serializable

@@ -87,7 +87,9 @@ class FakeMovieRepository : MovieRepository {
                     author = "User $index",
                     content = "This movie was great! I really enjoyed the scenes and the acting.",
                     createdAt = "2026-01-1$index",
-                    avatarPath = null
+                    avatarPath = null,
+                    username = "rwnhrmwn",
+                    rating = 10.0
                 )
             }
         )

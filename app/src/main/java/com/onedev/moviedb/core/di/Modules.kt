@@ -15,8 +15,7 @@ import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    // Repository
-    single<MovieRepository> { FakeMovieRepository() }
+    includes(networkModule, repositoryModule)
     
     // UseCases
     factory { GetGenresUseCase(get()) }

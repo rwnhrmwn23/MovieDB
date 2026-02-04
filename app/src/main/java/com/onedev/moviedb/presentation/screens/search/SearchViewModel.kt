@@ -24,11 +24,13 @@ class SearchViewModel(
     val query: StateFlow<String> = _query.asStateFlow()
 
     val searchResults: Flow<PagingData<Movie>> = _query
-        .debounce(300)
-        .filter { it.isNotEmpty() }
-        .distinctUntilChanged()
+        .debounce(500)
         .flatMapLatest { query ->
-            searchMoviesUseCase(query).cachedIn(viewModelScope)
+            if (query.isEmpty()) {
+                emptyFlow()
+            } else {
+                searchMoviesUseCase(query).cachedIn(viewModelScope)
+            }
         }
 
     fun onQueryChange(newQuery: String) {

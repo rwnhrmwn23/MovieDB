@@ -8,6 +8,7 @@ import androidx.navigation.toRoute
 import com.onedev.moviedb.presentation.screens.detail.DetailScreen
 import com.onedev.moviedb.presentation.screens.movie.MovieScreen
 import com.onedev.moviedb.presentation.screens.search.SearchScreen
+import com.onedev.moviedb.presentation.screens.video.VideoPlayerScreen
 
 @Composable
 fun NavGraph(
@@ -36,6 +37,19 @@ fun NavGraph(
             val detail: Screen.Detail = backStackEntry.toRoute()
             DetailScreen(
                 movieId = detail.movieId,
+                onNavigateBack = { navController.popBackStack() },
+                onNavigateToVideo = { videoId, videoTitle, videoType ->
+                    navController.navigate(Screen.VideoPlayer(videoId, videoTitle, videoType))
+                }
+            )
+        }
+        
+        composable<Screen.VideoPlayer> { backStackEntry ->
+            val video: Screen.VideoPlayer = backStackEntry.toRoute()
+            VideoPlayerScreen(
+                videoId = video.videoId,
+                videoTitle = video.videoTitle,
+                videoType = video.videoType,
                 onNavigateBack = { navController.popBackStack() }
             )
         }
