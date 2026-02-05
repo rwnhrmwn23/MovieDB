@@ -1,0 +1,296 @@
+{
+  "info": {
+    "_postman_id": "3c4461c4-452e-48cc-b848-3aefc4ed0336",
+    "name": "TheMovieDb",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "8660317"
+  },
+  "item": [
+    {
+      "name": "Genres",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://api.themoviedb.org/3/genre/movie/list",
+          "protocol": "https",
+          "host": [
+            "api",
+            "themoviedb",
+            "org"
+          ],
+          "path": [
+            "3",
+            "genre",
+            "movie",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Movies",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://api.themoviedb.org/3/discover/movie?page=1&sort_by=popularity.desc&with_genres=16|2|1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "themoviedb",
+            "org"
+          ],
+          "path": [
+            "3",
+            "discover",
+            "movie"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "sort_by",
+              "value": "popularity.desc"
+            },
+            {
+              "key": "with_genres",
+              "value": "16|2|1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Movie Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://api.themoviedb.org/3/movie/1084242",
+          "protocol": "https",
+          "host": [
+            "api",
+            "themoviedb",
+            "org"
+          ],
+          "path": [
+            "3",
+            "movie",
+            "1084242"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Movie Search",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://api.themoviedb.org/3/search/movie?query=Avengers&page=1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "themoviedb",
+            "org"
+          ],
+          "path": [
+            "3",
+            "search",
+            "movie"
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "Avengers"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Movie Reviews",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://api.themoviedb.org/3/movie/:movie_id/reviews?page=1",
+          "protocol": "https",
+          "host": [
+            "api",
+            "themoviedb",
+            "org"
+          ],
+          "path": [
+            "3",
+            "movie",
+            ":movie_id",
+            "reviews"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            }
+          ],
+          "variable": [
+            {
+              "key": "movie_id",
+              "value": "1084242"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Poster",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://image.tmdb.org/t/p/w500/oJ7g2CifqpStmoYQyaLQgEU32qO.jpg",
+          "protocol": "https",
+          "host": [
+            "image",
+            "tmdb",
+            "org"
+          ],
+          "path": [
+            "t",
+            "p",
+            "w500",
+            "oJ7g2CifqpStmoYQyaLQgEU32qO.jpg"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Backdrop",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://image.tmdb.org/t/p/w500/5h2EsPKNDdB3MAtOk9MB9Ycg9Rz.jpg",
+          "protocol": "https",
+          "host": [
+            "image",
+            "tmdb",
+            "org"
+          ],
+          "path": [
+            "t",
+            "p",
+            "w500",
+            "5h2EsPKNDdB3MAtOk9MB9Ycg9Rz.jpg"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Trailer",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9."
+          },
+          {
+            "key": "accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://api.themoviedb.org/3/movie/:movie_id/videos",
+          "protocol": "https",
+          "host": [
+            "api",
+            "themoviedb",
+            "org"
+          ],
+          "path": [
+            "3",
+            "movie",
+            ":movie_id",
+            "videos"
+          ],
+          "variable": [
+            {
+              "key": "movie_id",
+              "value": "1084242"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
